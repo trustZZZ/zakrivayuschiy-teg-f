@@ -13,17 +13,21 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+
   font-family: var(--main-font), "Segoe UI";
-  font-variation-settings: 'wdth' var(--wdth), 'wght' var(--wght);
-  min-inline-size: 1440px;
-  inline-size: 100%;
+  font-variation-settings:
+    "wdth" var(--wdth),
+    "wght" var(--wght);
+  color: #000;
+
+  inline-size: 100vw;
   background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
   background-color: #fff;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,4 +58,62 @@
 
 .header__description {
   font-size: 23px;
+}
+
+.main-content {
+  inline-size: var(--inline-size);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.card__title {
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+}
+
+.card__img {
+  display: block;
+  inline-size: var(--inline-size);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+.card__like-button {
+  background-color: transparent;
+  border: none;
+  font-family: var(--accent-font);
+  inline-size: 169px;
+  block-size: 38px;
+  align-self: flex-end;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-icon {
+  inline-size: 27px;
+  block-size: 24px;
+}
+
+.button__text {
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 9px 27px;
+  font-size: 14px;
 }
