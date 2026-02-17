@@ -14,4 +14,6 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   justify-self: center;
+  font-family: var(--main-font), "Segoe UI";
+  font-variation-settings: 'wdth' var(--wdth), 'wght' var(--wght);
 }
