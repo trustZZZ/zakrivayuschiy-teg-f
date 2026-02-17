@@ -16,4 +16,11 @@
   justify-self: center;
   font-family: var(--main-font), "Segoe UI";
   font-variation-settings: 'wdth' var(--wdth), 'wght' var(--wght);
+  max-inline-size: 1440px;
+  inline-size: 100%;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }

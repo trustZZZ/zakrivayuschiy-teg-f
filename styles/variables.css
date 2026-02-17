@@ -4,4 +4,7 @@
     --accent-font: "PressStart2P-Regular";
     --wdth: 0;
     --wght: 400;
+    --bg-image: repeating-linear-gradient(to right, #d3d3d3, #d3d3d300 2px),
+                repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d300 2px),
+                repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 2px);
 }
