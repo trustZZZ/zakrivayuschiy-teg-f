@@ -6,5 +6,6 @@
     --wght: 400;
     --bg-image: repeating-linear-gradient(to right, #d3d3d3, #d3d3d300 2px),
                 repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d300 2px),
-                repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 2px);
+                repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+    --inline-size: clamp(375px, 100%, 700px);
 }

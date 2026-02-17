@@ -13,14 +13,45 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  justify-self: center;
   font-family: var(--main-font), "Segoe UI";
   font-variation-settings: 'wdth' var(--wdth), 'wght' var(--wght);
-  max-inline-size: 1440px;
+  min-inline-size: 1440px;
   inline-size: 100%;
   background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  background-color: #fff;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 98px;
+
+  padding: 100px 370px;
+}
+
+.header {
+  inline-size: var(--inline-size);
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 2px solid #000;
+  min-block-size: 368px;
+  block-size: 100%;
+  font-family: var(--accent-font);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header__title {
+  font-size: 65px;
+}
+
+.header__description {
+  font-size: 23px;
 }
