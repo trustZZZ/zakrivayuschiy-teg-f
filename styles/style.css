@@ -73,6 +73,7 @@
 .card {
   background-color: #fff;
   border: 2px solid #000;
+  position: relative;
 }
 
 .card__title {
@@ -163,3 +164,32 @@
   color: #000;
   max-inline-size: 234px;
 }
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  box-shadow: 1px 1px solid var(--stroke-color);
+}
+
+.label__text {
+  font-size: 14px;
+  /* watermark */
+  font-family: var(--accent-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  /* identical to box height */
+  text-transform: uppercase;
+  opacity: 0.5;
+  color: #000;
+}
+
+@supports((text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color))) {
+  .label__text {
+    -webkit-text-stroke: 1px var(--stroke-color);
+    text-stroke: 1px var(--stroke-color);
+    text-shadow: none;
+  }
+} 
