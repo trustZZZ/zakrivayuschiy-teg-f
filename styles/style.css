@@ -81,11 +81,12 @@
   line-height: 22px;
   color: #000;
   inline-size: var(--inline-size);
+  border-bottom: 2px solid #000;
 }
 
 .card__img {
   display: block;
-  inline-size: var(--inline-size);
+  inline-size: 100%;
 }
 
 .description {
@@ -93,7 +94,7 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
-
+  border-top: 2px solid #000;
   font-style: normal;
   font-size: 18px;
   line-height: 21px;
@@ -198,6 +199,35 @@ dialog .button__text {
   background-color: #fff;
   border: 2px solid #000;
   block-size: 38px;
+}
+
+.first-sprint__img {
+  filter:grayscale(0.8);
+}
+
+.first-sprint-project__img {
+  filter: saturate(4);
+}
+
+.second-sprint__img {
+  filter: hue-rotate(0.1turn);
+}
+
+.second-sprint-community__img {
+  filter: invert(1) contrast(0.8);
+}
+
+.third-sprint__img {
+  filter: sepia(1);
+}
+
+.third-sprint-concentration__img {
+  filter: blur(11px);
+  border-radius: 3px;
+}
+
+.current-step__img {
+  filter: hue-rotate(0.3turn) contrast(0.3);
 }
 
 @supports (
