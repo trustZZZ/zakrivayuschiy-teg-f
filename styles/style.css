@@ -18,7 +18,7 @@
   font-variation-settings:
     "wdth" var(--wdth),
     "wght" var(--wght);
-  color: #000;
+  color: var(--main-color);
 
   inline-size: 100vw;
   background-image: var(--bg-image);
@@ -26,7 +26,7 @@
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #fff;
+  background-color: var(--accent-color);
 
   display: flex;
   flex-direction: column;
@@ -40,8 +40,8 @@
 .header {
   inline-size: var(--inline-size);
   text-transform: uppercase;
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: var(--accent-color);
+  border: 2px solid var(--main-color);
   min-block-size: 368px;
   block-size: 100%;
   font-family: var(--accent-font);
@@ -71,8 +71,8 @@
 }
 
 .card {
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: var(--accent-color);
+  border: 2px solid var(--main-color);
   position: relative;
 }
 
@@ -80,9 +80,9 @@
   font-size: 18px;
   line-height: 22px;
   text-wrap-style: balance;
-  color: #000;
+  color: var(--main-color);
   inline-size: var(--inline-size);
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--main-color);
 }
 
 .card__img {
@@ -95,7 +95,7 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
-  border-top: 2px solid #000;
+  border-top: 2px solid var(--main-color);
   font-style: normal;
   font-size: 18px;
   line-height: 21px;
@@ -112,8 +112,21 @@
 
 .card__icon-button {
   background-color: transparent;
-  border: none;
-  padding: 7px 0;
+  border: 2px solid transparent;
+  border-color: transparent;
+  block-size: 38px;
+  inline-size: 38px;
+  padding: 0;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--main-color);
+  border-radius: 0;
 }
 
 .card__like-button {
@@ -122,7 +135,7 @@
   border: none;
   font-family: var(--accent-font);
   inline-size: 130px;
-  border: 2px solid #000;
+  border: 2px solid var(--main-color);
   padding: 8px 17px;
 }
 
@@ -132,7 +145,7 @@
 
 .button_animation:focus-visible {
   outline: none;
-  box-shadow: 2px 2px 0 0 #000;
+  box-shadow: 2px 2px 0 0 var(--main-color);
 }
 
 .button_animation::before {
@@ -141,26 +154,33 @@
   position: absolute;
   inline-size: 100%;
   block-size: 100%;
-  background-color: #000;
+  background-color: var(--main-color);
   bottom: 0;
   left: 0;
-  transform : scaleX(0);
+  transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
   transform-origin: 0 50%;
 }
 
-.button_animation:hover::before{
+.button_animation:hover::before {
   transform: scaleX(1);
 }
 
 .button__text {
+  z-index: 2;
+  position: relative;
   font-size: 14px;
   font-family: var(--accent-font);
-
+  color: var(--accent-color);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
+  mix-blend-mode: difference;
+}
+
+.button_animation:hover .button__text {
+  color: var(--accent-color);
 }
 
 .card__memory-button {
@@ -169,11 +189,18 @@
   max-inline-size: 355px;
   display: flex;
   gap: 8px;
-  background-color: #fff;
-  border: 2px solid #000;
+  border: 2px solid var(--main-color);
   align-self: center;
   align-items: center;
   line-height: 90%;
+  background-color: var(--accent-color);
+}
+
+.card__memory-button:hover svg {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+  stroke: var(--accent-color);
 }
 
 .card__label {
@@ -192,7 +219,7 @@
   line-height: 14px;
   text-transform: uppercase;
   opacity: 0.5;
-  color: #000;
+  color: var(--main-color);
   mix-blend-mode: hard-light;
   text-shadow:
     -1px -1px var(--stroke-color),
@@ -213,7 +240,7 @@ dialog[open] {
 }
 
 dialog[open]::backdrop {
-  background-color: #000000bf;
+  background-color: var(--main-color) 000bf;
 }
 
 body:has(dialog[open]) {
@@ -227,8 +254,8 @@ dialog .button__text {
 .ok-button {
   position: relative;
   grid-column: span 2;
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: var(--accent-color);
+  border: 2px solid var(--main-color);
   block-size: 38px;
 }
 
