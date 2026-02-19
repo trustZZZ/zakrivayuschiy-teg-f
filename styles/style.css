@@ -9,7 +9,6 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -73,7 +72,6 @@
 .card {
   background-color: var(--accent-color);
   border: 2px solid var(--main-color);
-  position: relative;
 }
 
 .card__title {
@@ -81,13 +79,14 @@
   line-height: 22px;
   text-wrap-style: balance;
   color: var(--main-color);
-  inline-size: var(--inline-size);
+  inline-size: 100%;
   border-bottom: 2px solid var(--main-color);
 }
 
 .card__img {
   display: block;
   inline-size: 100%;
+  position: relative;
 }
 
 .description {
@@ -102,7 +101,8 @@
 }
 
 .card__butttons-container {
-  inline-size: 53%;
+  max-inline-size: 169px;
+  inline-size: 100%;
   block-size: 38px;
   align-self: flex-end;
   display: flex;
@@ -143,6 +143,10 @@
   transition: box-shadow 0.3s ease;
 }
 
+.button_animation:focus {
+  outline: none;
+}
+
 .button_animation:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--main-color);
@@ -177,10 +181,81 @@
   font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
+  align-self: center;
+  justify-self: center;
 }
 
 .button_animation:hover .button__text {
   color: var(--accent-color);
+}
+
+.main-body,
+.core {
+  fill: transparent;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.contour {
+  fill: var(--contour-color);
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.sparks {
+  fill: var(--animation-fill-color);
+  opacity: 0;
+}
+
+.like-icon:hover .core {
+  align-self: center;
+  justify-self: center;
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-beating 0.3s 0.1s ease-in 1;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-shine 0.3s 0.3s ease-in 1;
 }
 
 .card__memory-button {
@@ -204,13 +279,13 @@
 }
 
 .card__label {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  box-shadow: 1px 1px solid var(--stroke-color);
+  position: relative;
 }
 
 .label__text {
+  position: absolute;
+  top: 25px;
+  right: 25px;
   font-size: 14px;
   font-family: var(--accent-font);
   font-style: normal;
@@ -237,10 +312,11 @@ dialog[open] {
   min-block-size: 191px;
   padding: 30px;
   align-self: center;
+  justify-self: center;
 }
 
 dialog[open]::backdrop {
-  background-color: var(--main-color) 000bf;
+  background-color: var(--backdrop-bg-color);
 }
 
 body:has(dialog[open]) {
@@ -288,6 +364,11 @@ dialog .button__text {
   filter: hue-rotate(0.3turn) contrast(0.3);
 }
 
+.floppy-small {
+  align-self: center;
+  justify-self: center;
+}
+
 @supports (
   (text-stroke: 1px var(--stroke-color)) or
     (-webkit-text-stroke: 1px var(--stroke-color))
@@ -316,16 +397,8 @@ dialog .button__text {
     font-size: 14px;
   }
 
-  .card__label {
-    top: 61px;
-  }
-
   .card__title {
     padding: 4px 10px;
-  }
-
-  .card__butttons-container {
-    inline-size: 53%;
   }
 
   .card__memory-button {
@@ -333,10 +406,11 @@ dialog .button__text {
     block-size: 84px;
     flex-direction: column;
     padding: 12px 15px;
-    gap: 20px;
+    gap: 13px;
   }
 
-  .card__memory-button svg {
-    scale: 1.3;
+  .floppy-small {
+    width: 28px;
+    height: 28px;
   }
 }

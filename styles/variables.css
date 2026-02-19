@@ -1,23 +1,29 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --main-font: "Inter-Variable", sans-serif;
-    --accent-font: "PressStart2P-Regular";
-    --accent-color: #000;
-    --wdth: 0;
-    --bg-image: repeating-linear-gradient(to right, #d3d3d3, #d3d3d300 2px),
-                repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d300 2px),
-                repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
-    --inline-size: clamp(375px, 100%, 700px);
-    --stroke-color: #fff;
-    --header-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-    --accent-color: #fff;
-    --main-color: #000;
+  --main-font: "Inter-Variable", sans-serif;
+  --accent-font: "PressStart2P-Regular";
+  --accent-color: #000;
+  --wdth: 0;
+  --bg-image:
+    repeating-linear-gradient(to right, #d3d3d3, #d3d3d300 2px),
+    repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d300 2px),
+    repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  --inline-size: clamp(375px, 100%, 700px);
+  --stroke-color: #fff;
+  --header-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --accent-color: #fff;
+  --main-color: #000;
+  --contour-color: #000;
+  --animation-fill-color: red;
+  --backdrop-bg-color: #000000bf;
+  --floppy-width: 21;
+  --floppy-height: 21;
 }
 
 .text_width_large {
-    --wdth: 410;
+  --wdth: 410;
 }
 
 .text_weight_bold {
-    --wght: 715;
+  --wght: 715;
 }
