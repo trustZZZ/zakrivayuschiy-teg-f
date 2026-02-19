@@ -13,23 +13,21 @@
     <link rel="icon" href="svg/favicon.svg" type="image/svg" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   </head>
-  <div popover id="flopper-popover">
-    <p class="popover__description text_width_large">
+  <body class="page text_width_large">
+    <dialog id="flopper-dialog">
       <svg viewBox="0 0 39 39" width="39" height="39">
         <use href="svg/floppy.svg#floppy-big"></use>
       </svg>
-      <span>Вставьте дискету, чтобы продолжить</span>
-    </p>
-    <button
-      popovertargetaction="hide"
-      popovertarget="flopper-popover"
-      class="card__icon-button"
-      type="button"
-    >
-      <span class="button__text">OK</span>
-    </button>
-  </div>
-  <body class="page text_width_large">
+      <span class="button__text">Вставьте дискету, чтобы продолжить</span>
+      <button
+        type="button"
+        onclick="window['flopper-dialog'].close()"
+        aria-controls="flopper-dialog"
+        class="ok-button"
+      >
+        <span class="button__text">OK</span>
+      </button>
+    </dialog>
     <header class="header">
       <h1 class="header__title">&lt;/html&gt;</h1>
       <p class="header__description">Закрывающий тег</p>
@@ -38,7 +36,7 @@
       <section class="cards">
         <article class="card">
           <div class="card__label">
-            <img>
+            <img />
             <p class="label__text">&lt;/html&gt;</p>
           </div>
           <h2 class="card__title text_weight_bold">
@@ -56,46 +54,48 @@
               знания могут повлиять на ваше будущее.
             </p>
             <p>Место для ваших воспоминаний о начале обучения.</p>
-            <button type="button" class="card__like-button">
-              <svg
-                class="like-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="39"
-                height="36"
-                fill="none"
-                viewBox="0 0 39 36"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    fill="#000"
-                    d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h39v36H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="button__text">Like</span>
-            </button>
+            <div class="card__butttons-container">
+              <button type="button" class="card__icon-button">
+                <svg
+                  class="like-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="36"
+                  fill="none"
+                  viewBox="0 0 39 36"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="#000"
+                      d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h39v36H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button class="card__like-button"><span class="button__text">Like</span></button>
+            </div>
           </div>
         </article>
         <article class="card">
           <div class="card__label">
-            <img>
+            <img />
             <p class="label__text">&lt;/html&gt;</p>
           </div>
           <h2 class="card__title text_weight_bold">
@@ -115,46 +115,48 @@
               начать? а вдруг будет слишком сложно? что, если я не справлюсь?
             </p>
             <p>Место для ваших воспоминаний о начале первого спринта.</p>
-            <button type="button" class="card__like-button">
-              <svg
-                class="like-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="39"
-                height="36"
-                fill="none"
-                viewBox="0 0 39 36"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    fill="#000"
-                    d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h39v36H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="button__text">Like</span>
-            </button>
+            <div class="card__butttons-container">
+              <button type="button" class="card__icon-button">
+                <svg
+                  class="like-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="36"
+                  fill="none"
+                  viewBox="0 0 39 36"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="#000"
+                      d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h39v36H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button class="card__like-button"><span class="button__text">Like</span></button>
+            </div>
           </div>
         </article>
         <article class="card">
           <div class="card__label">
-            <img>
+            <img />
             <p class="label__text">&lt;/html&gt;</p>
           </div>
           <h2 class="card__title text_weight_bold">
@@ -172,46 +174,48 @@
               наоборот, могли вдохновиться успехами и поверить в себя.
             </p>
             <p>Место для ваших воспоминаний об окончании первого спринта.</p>
-            <button type="button" class="card__like-button">
-              <svg
-                class="like-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="39"
-                height="36"
-                fill="none"
-                viewBox="0 0 39 36"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    fill="#000"
-                    d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h39v36H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="button__text">Like</span>
-            </button>
+            <div class="card__butttons-container">
+              <button type="button" class="card__icon-button">
+                <svg
+                  class="like-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="36"
+                  fill="none"
+                  viewBox="0 0 39 36"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="#000"
+                      d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h39v36H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button class="card__like-button"><span class="button__text">Like</span></button>
+            </div>
           </div>
         </article>
         <article class="card">
           <div class="card__label">
-            <img>
+            <img />
             <p class="label__text">&lt;/html&gt;</p>
           </div>
           <h2 class="card__title text_weight_bold">
@@ -231,46 +235,48 @@
               старались просто сделать.
             </p>
             <p>Место для ваших воспоминаний о начале второго спринта.</p>
-            <button type="button" class="card__like-button">
-              <svg
-                class="like-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="39"
-                height="36"
-                fill="none"
-                viewBox="0 0 39 36"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    fill="#000"
-                    d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h39v36H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="button__text">Like</span>
-            </button>
+            <div class="card__butttons-container">
+              <button type="button" class="card__icon-button">
+                <svg
+                  class="like-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="36"
+                  fill="none"
+                  viewBox="0 0 39 36"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="#000"
+                      d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h39v36H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button class="card__like-button"><span class="button__text">Like</span></button>
+            </div>
           </div>
         </article>
         <article class="card">
           <div class="card__label">
-            <img>
+            <img />
             <p class="label__text">&lt;/html&gt;</p>
           </div>
           <h2 class="card__title text_weight_bold">
@@ -291,46 +297,48 @@
               единомышленники, не правда ли?
             </p>
             <p>Место для ваших воспоминаний об окончании второго спринта.</p>
-            <button type="button" class="card__like-button">
-              <svg
-                class="like-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="39"
-                height="36"
-                fill="none"
-                viewBox="0 0 39 36"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    fill="#000"
-                    d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h39v36H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="button__text">Like</span>
-            </button>
+            <div class="card__butttons-container">
+              <button type="button" class="card__icon-button">
+                <svg
+                  class="like-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="36"
+                  fill="none"
+                  viewBox="0 0 39 36"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="#000"
+                      d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h39v36H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button class="card__like-button"><span class="button__text">Like</span></button>
+            </div>
           </div>
         </article>
         <article class="card">
           <div class="card__label">
-            <img>
+            <img />
             <p class="label__text">&lt;/html&gt;</p>
           </div>
           <h2 class="card__title text_weight_bold">
@@ -348,46 +356,48 @@
               время посмотреть на задачу под другим углом.
             </p>
             <p>Место для ваших воспоминаний о начале третьего спринта.</p>
-            <button type="button" class="card__like-button">
-              <svg
-                class="like-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="39"
-                height="36"
-                fill="none"
-                viewBox="0 0 39 36"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    fill="#000"
-                    d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h39v36H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="button__text">Like</span>
-            </button>
+            <div class="card__butttons-container">
+              <button type="button" class="card__icon-button">
+                <svg
+                  class="like-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="36"
+                  fill="none"
+                  viewBox="0 0 39 36"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="#000"
+                      d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h39v36H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button class="card__like-button"><span class="button__text">Like</span></button>
+            </div>
           </div>
         </article>
         <article class="card">
           <div class="card__label">
-            <img>
+            <img />
             <p class="label__text">&lt;/html&gt;</p>
           </div>
           <h2 class="card__title text_weight_bold">
@@ -407,46 +417,48 @@
               откуда вы её черпали.
             </p>
             <p>Место для ваших воспоминаний об окончании третьего спринта.</p>
-            <button type="button" class="card__like-button">
-              <svg
-                class="like-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="39"
-                height="36"
-                fill="none"
-                viewBox="0 0 39 36"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    fill="#000"
-                    d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h39v36H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="button__text">Like</span>
-            </button>
+            <div class="card__butttons-container">
+              <button type="button" class="card__icon-button">
+                <svg
+                  class="like-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="36"
+                  fill="none"
+                  viewBox="0 0 39 36"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="#000"
+                      d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h39v36H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button class="card__like-button"><span class="button__text">Like</span></button>
+            </div>
           </div>
         </article>
         <article class="card">
           <div class="card__label">
-            <img>
+            <img />
             <p class="label__text">&lt;/html&gt;</p>
           </div>
           <h2 class="card__title text_weight_bold">«Сейчас я здесь»</h2>
@@ -455,7 +467,7 @@
             src="images/car.png"
             alt="изображение машины в виде пикселей в фиолетово-красном тоне"
           />
-          <div class="description">
+          <div class="description .text_width_large">
             <p>
               Сейчас вы уже очень много знаете о вёрстке. Но это только начало.
               Во-первых, впереди ещё много материала про «красотищу». Во-вторых,
@@ -468,47 +480,50 @@
               Место, чтобы остановиться, подумать и написать, что вы чувствуете
               в этой точке пути.
             </p>
-            <button type="button" class="card__like-button">
-              <svg
-                class="like-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="39"
-                height="36"
-                fill="none"
-                viewBox="0 0 39 36"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    fill="#000"
-                    d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
-                  />
-                  <path
-                    fill="red"
-                    d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h39v36H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="button__text">Like</span>
-            </button>
+            <div class="card__butttons-container">
+              <button type="button" class="card__icon-button">
+                <svg
+                  class="like-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="36"
+                  fill="none"
+                  viewBox="0 0 39 36"
+                >
+                  <g clip-path="url(#a)">
+                    <path
+                      fill="#000"
+                      d="M12 6H9v3h3zm3 0h-3v3h3zM9 9H6v3h3zm0 3H6v3h3zm0 3H6v3h3zm9-9h-3v3h3zm-6 12H9v3h3zm3 3h-3v3h3zm3 3h-3v3h3zm9-18h3v3h-3zm-3 0h3v3h-3zm6 3h3v3h-3zm0 3h3v3h-3zm0 3h3v3h-3zm-9-9h3v3h-3zm6 12h3v3h-3zm-3 3h3v3h-3zm-3 3h3v3h-3zm0 3h-3v3h3zm0-18h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M12 9H9v3h3zm3 3h-3v3h3zm3-3h-3v3h3zm-6 6H9v3h3zm3 0h-3v3h3zm0 3h-3v3h3zm3-6h-3v3h3zm0 9h-3v3h3zm0-3h-3v3h3zm9-9h3v3h-3zm-3 0h3v3h-3zm3 3h3v3h-3zm-3 0h3v3h-3zm-3-3h3v3h-3zm6 6h3v3h-3zm-3 0h3v3h-3zm0 3h3v3h-3zm-3-6h3v3h-3zm0 9h3v3h-3zm0-3h3v3h-3zm0 3h-3v3h3zm0 3h-3v3h3z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 15h-3v3h3zm3 0h3v3h-3zm0 0h-3v3h3zm0-3h-3v3h3zm0 6h-3v3h3z"
+                    />
+                    <path
+                      fill="red"
+                      d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h39v36H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button class="card__like-button"><span class="button__text">Like</span></button>
+            </div>
           </div>
         </article>
         <button
-          class="card__icon-button"
-          popovertarget="flopper-popover"
-          popovertargetaction="show"
+          type="button"
+          onclick="window['flopper-dialog'].showModal()"
+          class="card__memory-button"
+          aria-controls="flopper-dialog"
         >
           <svg viewBox="0 0 21 21" width="21" height="21">
             <use href="svg/floppy.svg#floppy-small"></use>

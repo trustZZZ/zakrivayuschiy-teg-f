@@ -2,6 +2,7 @@
 :root {
     --main-font: "Inter-Variable", sans-serif;
     --accent-font: "PressStart2P-Regular";
+    --accent-color: #000;
     --wdth: 0;
     --bg-image: repeating-linear-gradient(to right, #d3d3d3, #d3d3d300 2px),
                 repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d300 2px),
