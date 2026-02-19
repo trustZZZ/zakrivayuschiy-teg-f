@@ -53,7 +53,7 @@
 }
 
 .header__title {
-  font-size: 65px;
+  font-size: var(--header-font-size);
 }
 
 .header__description {
@@ -79,6 +79,7 @@
 .card__title {
   font-size: 18px;
   line-height: 22px;
+  text-wrap-style: balance;
   color: #000;
   inline-size: var(--inline-size);
   border-bottom: 2px solid #000;
@@ -116,12 +117,40 @@
 }
 
 .card__like-button {
+  position: relative;
   background-color: transparent;
   border: none;
   font-family: var(--accent-font);
   inline-size: 130px;
   border: 2px solid #000;
   padding: 8px 17px;
+}
+
+.button_animation {
+  transition: box-shadow 0.3s ease;
+}
+
+.button_animation:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.button_animation::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  transform : scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: 0 50%;
+}
+
+.button_animation:hover::before{
+  transform: scaleX(1);
 }
 
 .button__text {
@@ -135,6 +164,7 @@
 }
 
 .card__memory-button {
+  position: relative;
   padding: 15px 20px;
   max-inline-size: 355px;
   display: flex;
@@ -195,6 +225,7 @@ dialog .button__text {
 }
 
 .ok-button {
+  position: relative;
   grid-column: span 2;
   background-color: #fff;
   border: 2px solid #000;
@@ -202,7 +233,7 @@ dialog .button__text {
 }
 
 .first-sprint__img {
-  filter:grayscale(0.8);
+  filter: grayscale(0.8);
 }
 
 .first-sprint-project__img {
@@ -278,7 +309,7 @@ dialog .button__text {
     gap: 20px;
   }
 
-  .card__memory-button svg{
+  .card__memory-button svg {
     scale: 1.3;
   }
 }
