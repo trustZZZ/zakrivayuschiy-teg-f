@@ -384,6 +384,7 @@ body:has(dialog[open]) {
 @media (width <= 375px) {
   .page {
     padding: 100px 0;
+    gap: 100px;
   }
 
   .header {
