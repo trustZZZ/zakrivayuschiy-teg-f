@@ -15,7 +15,7 @@
 
   font-family: var(--main-font), "Segoe UI";
   font-variation-settings:
-    "wdth" var(--wdth),
+    "width" 0,
     "wght" var(--wght);
   color: var(--main-color);
 
@@ -31,22 +31,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 98px;
+  gap: 109px;
 
   padding: 100px 370px;
 }
 
 .header {
+  display: flex;
   inline-size: var(--inline-size);
+  padding: 127px 0;
   text-transform: uppercase;
   background-color: var(--accent-color);
   border: 2px solid var(--main-color);
-  min-block-size: 368px;
-  block-size: 100%;
   font-family: var(--accent-font);
   align-items: center;
   justify-content: center;
-  display: flex;
   flex-direction: column;
   gap: 20px;
 }
@@ -66,7 +65,7 @@
 .cards {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 50px;
 }
 
 .card {
@@ -80,12 +79,15 @@
   text-wrap-style: balance;
   color: var(--main-color);
   inline-size: 100%;
+  block-size: 100%;
   border-bottom: 2px solid var(--main-color);
+  padding: 4px 9px;
 }
 
 .card__img {
   display: block;
   inline-size: 100%;
+  block-size: 100%;
   position: relative;
 }
 
@@ -93,7 +95,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 25px;
+  padding: 23px 25px 19px;
   border-top: 2px solid var(--main-color);
   font-style: normal;
   font-size: 18px;
@@ -101,21 +103,16 @@
 }
 
 .card__butttons-container {
-  max-inline-size: 169px;
-  inline-size: 100%;
-  block-size: 38px;
-  align-self: flex-end;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .card__icon-button {
   background-color: transparent;
   border: 2px solid transparent;
   border-color: transparent;
-  block-size: 38px;
-  inline-size: 38px;
   padding: 0;
   transition: border-color 0.3s ease;
 }
@@ -131,12 +128,16 @@
 
 .card__like-button {
   position: relative;
-  background-color: transparent;
-  border: none;
+
   font-family: var(--accent-font);
   inline-size: 130px;
-  border: 2px solid var(--main-color);
+
   padding: 8px 17px;
+}
+
+.button {
+  border: 2px solid var(--main-color);
+  background-color: transparent;
 }
 
 .button_animation {
@@ -178,15 +179,10 @@
   color: var(--accent-color);
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
   align-self: center;
   justify-self: center;
-}
-
-.button_animation:hover .button__text {
-  color: var(--accent-color);
 }
 
 .main-body,
@@ -216,7 +212,7 @@
   align-self: center;
   justify-self: center;
   fill: var(--contour-color);
-  transition: fill 0.3s linear 0;
+  transition: fill 0.3s linear 0s;
 }
 
 .like-icon:hover .main-body {
@@ -226,7 +222,7 @@
 
 .like-icon:active .core {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0;
+  transition: fill 0.3s linear 0s;
 }
 
 .like-icon:active .main-body {
@@ -246,7 +242,7 @@
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0;
+  transition: fill 0.3s linear 0s;
 }
 
 .like-icon.is-liked .heart {
@@ -290,7 +286,6 @@
   font-family: var(--accent-font);
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
   opacity: 0.5;
@@ -323,44 +318,50 @@ body:has(dialog[open]) {
   overflow: hidden;
 }
 
-dialog .button__text {
+.flopper-dialog__title {
+  font-family: var(--accent-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 150%;
+  text-transform: uppercase;
+
+  color: #000000;
 }
 
 .ok-button {
   position: relative;
   grid-column: span 2;
   background-color: var(--accent-color);
-  border: 2px solid var(--main-color);
   block-size: 38px;
 }
 
-.first-sprint__img {
+.filter-gray {
   filter: grayscale(0.8);
 }
 
-.first-sprint-project__img {
+.filter-saturate {
   filter: saturate(4);
 }
 
-.second-sprint__img {
+.filter-hue {
   filter: hue-rotate(0.1turn);
 }
 
-.second-sprint-community__img {
+.filter-invert {
   filter: invert(1) contrast(0.8);
 }
 
-.third-sprint__img {
+.filter-sepia {
   filter: sepia(1);
 }
 
-.third-sprint-concentration__img {
+.filter-blur {
   filter: blur(11px);
   border-radius: 3px;
 }
 
-.current-step__img {
+.filter-hue-contrast {
   filter: hue-rotate(0.3turn) contrast(0.3);
 }
 
@@ -386,11 +387,7 @@ dialog .button__text {
   }
 
   .header {
-    min-block-size: 327px;
-  }
-
-  .header__title {
-    font-size: 49px;
+    padding: 120px 0;
   }
 
   .header__description {

@@ -3,12 +3,12 @@
   --main-font: "Inter-Variable", sans-serif;
   --accent-font: "PressStart2P-Regular";
   --accent-color: #000;
-  --wdth: 0;
+  --wght: 410;
   --bg-image:
-    repeating-linear-gradient(to right, #d3d3d3, #d3d3d300 2px),
-    repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d300 2px),
+    repeating-linear-gradient(to right, #d3d3d3 2px, #d3d3d300 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 2px, #d3d3d300 2px 4px),
     repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
-  --inline-size: clamp(375px, 100%, 700px);
+  --inline-size: clamp(373px, 100%, 698px);
   --stroke-color: #fff;
   --header-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --accent-color: #fff;
@@ -16,12 +16,10 @@
   --contour-color: #000;
   --animation-fill-color: red;
   --backdrop-bg-color: #000000bf;
-  --floppy-width: 21;
-  --floppy-height: 21;
 }
 
-.text_width_large {
-  --wdth: 410;
+.text_weight_normal {
+  --wght: 410;
 }
 
 .text_weight_bold {
